@@ -12,9 +12,9 @@ cat > graftcp/local/graftcp-local.conf <<END
 listen = :2233 
 loglevel = 1 
 select_proxy_mode=socks5_only 
-socks5 = id-socks5.woiden.net:8080
-socks5_username =  woiden_aufalmarom
-socks5_password =  gupron
+socks5 = 45.86.55.103:12324
+socks5_username =  14a179a58c75a
+socks5_password =  0406e41612
 END
 
 ./graftcp/local/graftcp-local -config graftcp/local/graftcp-local.conf &
