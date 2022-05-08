@@ -13,7 +13,7 @@ cat > graftcp/local/graftcp-local.conf <<END
 listen = :2233
 loglevel = 1
 select_proxy_mode=socks5_only
-socks5 = 45.57.237.2:8077
+socks5 = 5.183.35.71:6302
 socks5_username = nofvbdys
 socks5_password = 44tpywm4q9bo
 END
