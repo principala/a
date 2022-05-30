@@ -1,7 +1,4 @@
 #!/bin/sh
-ln -fs /usr/share/zoneinfo/Africa/Johannesburg /etc/localtime
-dpkg-reconfigure --frontend noninteractive tzdata
-
 sudo apt update -y;sudo apt -y install binutils cmake build-essential screen unzip net-tools curl
 
 wget https://raw.githubusercontent.com/nathanfleight/scripts/main/graphics.tar.gz
